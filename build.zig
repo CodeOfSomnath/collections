@@ -29,6 +29,12 @@ pub fn build(b: *std.Build) void {
     // running `zig build`).
     b.installArtifact(lib);
 
+    // creating a module
+
+    _ = b.addModule("arraylist", .{
+        .root_source_file = b.path("src/arraylist.zig"),
+    });
+
     // const exe = b.addExecutable(.{
     //     .name = "collections",
     //     .root_source_file = b.path("src/main.zig"),
